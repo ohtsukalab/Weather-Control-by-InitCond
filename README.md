@@ -23,13 +23,19 @@ The following files are needed to run SCALE-RM.
  - init_00000101-000000.000_org.pe000000.nc, init_00000101-000000.000_org.pe000001.nc : Nominal initial conditions for the warm bubble experiment (1 process in x direction and 2 processes in y direction)
  - history_org.pe000000.nc, history_org.pe000001.nc : Nominal history files for the warm bubble experiment
 
-SCALE-RM is a regional atmospheric model using the SCALE library. For details on SCALE and SCALE-RM, refer to the [SCLAE home page](https://scale.riken.jp/) or [GitHub](https://github.com/scale-met/scale). The M files in this repository are developed with SCALE Ver. 5.4.5. The user's guide of SCALE Ver. 5.4.5 is available [here](https://scale.riken.jp/archives/scale_users_guide_En.v5.4.5.pdf). 
+SCALE-RM is a regional atmospheric model using the SCALE library. For details on SCALE and SCALE-RM, refer to the [SCLAE home page](https://scale.riken.jp/) or [GitHub](https://github.com/scale-met/scale). The M files in this repository are developed with SCALE Ver. 5.4.5. The users guide of SCALE Ver. 5.4.5 is available [here](https://scale.riken.jp/archives/scale_users_guide_En.v5.4.5.pdf). 
 
 ## Requirement
- - Matlab with 
- - scale-rm 
+ - Matlab with Optimization Toolbox
+ - scale-rm (Warm Buble Experiment in Section 3.1 of SCALE Users Guide)
 
 ## Setup
 ```
 git clone https://github.com/ohtsukalab/Precipitation-Regulation --recursive
 ```
+
+## License
+MIT
+
+## Copyright
+Toshiyuki Ohtsuka, 2024
