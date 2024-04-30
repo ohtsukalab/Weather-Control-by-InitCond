@@ -37,5 +37,8 @@ git clone https://github.com/ohtsukalab/Precipitation-Regulation --recursive
 ## License
 MIT
 
-## Copyright
-Toshiyuki Ohtsuka, 2024
+## Contribution
+This repository is developed by Toshiyuki Ohtsuka, Graduate School of Informatics, Kyoto University. 
+
+## Acknowledgment
+This work was supported by JST Moonshot R\&D Program Grant Number JPMJMS2389-1-1.
