@@ -30,3 +30,6 @@ SCALE-RM is a regional atmospheric model using the SCALE library. For details on
  - scale-rm 
 
 ## Setup
+```
+git clone https://github.com/ohtsukalab/Precipitation-Regulation --recursive
+```
