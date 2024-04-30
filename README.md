@@ -1,6 +1,8 @@
 # Precipitation-Regulation
 Sensitivity analysis and initial condition perturbation for regulating cumulative precipitation
 
+## Overview 
+
 This repository shares Matlab M files for sensitivity analysis, optimization of initial condition perturbation, and validation for regulating cumulative precipitation in a numerical weather prediction model, SCALE-RM. 
 
 The user runs the following M files in order. 
@@ -22,3 +24,9 @@ The following files are needed to run SCALE-RM.
  - history_org.pe000000.nc, history_org.pe000001.nc : Nominal history files for the warm bubble experiment
 
 SCALE-RM is a regional atmospheric model using the SCALE library. For details on SCALE and SCALE-RM, refer to the [SCLAE home page](https://scale.riken.jp/) or [GitHub](https://github.com/scale-met/scale). The M files in this repository are developed with SCALE Ver. 5.4.5. The user's guide of SCALE Ver. 5.4.5 is available [here](https://scale.riken.jp/archives/scale_users_guide_En.v5.4.5.pdf). 
+
+## Requirement
+ - Matlab with 
+ - scale-rm 
+
+## Setup
