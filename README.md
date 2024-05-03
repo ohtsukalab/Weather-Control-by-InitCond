@@ -26,6 +26,10 @@ The following files are needed to run SCALE-RM.
 
 SCALE-RM is a regional atmospheric model using the SCALE library. For details on SCALE and SCALE-RM, refer to the [SCLAE home page](https://scale.riken.jp/) or [GitHub](https://github.com/scale-met/scale). The M files in this repository are developed with SCALE Ver. 5.4.5. The users guide of SCALE Ver. 5.4.5 is available [here](https://scale.riken.jp/archives/scale_users_guide_En.v5.4.5.pdf). 
 
+The following M files can be used for checking a history of scale-rm.
+ - plothistPREC.m : Plots history of precipitation intensity and accumulated precipitation
+ - plothistvideo.m : Generates a video of contour plots of a variable
+
 ## Requirement
  - Matlab with Optimization Toolbox
  - scale-rm (Warm Buble Experiment in Section 3.1 of SCALE Users Guide)
