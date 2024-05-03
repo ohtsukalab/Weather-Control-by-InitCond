@@ -10,14 +10,14 @@ The user runs the following M files in order.
 - perturball.m : Perturbs the initial condition at each grid, runs SCALE-RM, ans saves time hisotries. 
 - computeStensor.m : Reads all of the perturbed histories and computes the sensitivity tensor. The sensitivity tensor is saved to StensorPREC.mat. 
 - optiminit.m : Reads the sensitivity tensor, solves a minimum norm problem to determine the perturbations in the initial condtions to achieve desired perturbations in the accumulated precipitation, runs SCALE-RM with the perturbed initial conditions, and plots the accumulated precipitation. The optimal perturbations are saved to dvarans.mat. The user needs to speficy the reference accumulated precipitation, constraints, and the solver.
-- plot2cases.m : Plots optimal perturbations by $\ell_2$ and $\ell_1$ norm minimization and corresponding accumulated preciptation 
+- plot2cases.m : Plots optimal perturbations determined by $\ell_2$ and $\ell_1$ norm minimization problems and corresponding accumulated preciptation 
 
 The following M files define utility functions. 
  - copycdf.m : Copies a set of netCDF data
  - getcdfinfo.m : Gets information of netCDF data
  - ncreadinit.m : Reads netCDF init data files and combines them into an array
  - ncreadhist.m : Reads netCDF history data files and combines them into an array
- - minL1lin_rev.m : Solves a constrained $\ell_1$-norm minimization problem
+ - minL1lin_rev.m : Solves a constrained $\ell_1$ norm minimization problem
 
 The following files are needed to run SCALE-RM. 
  - run_R20kmDX500m.conf : Configulation file for the warm bubble experiment
