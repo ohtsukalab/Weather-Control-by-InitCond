@@ -6,9 +6,9 @@
 % 
 % Toshiyuki Ohtsuka, Feb. 2024
 clear; 
-varname = "QV"; % Name of variable to be perturbed
-%dvar = 0.1;   % Perturbation for RHOT, MOMY, and MOMZ
-dvar = 0.001; % Perturbation for QV
+varname = "RHOT"; % Name of variable to be perturbed
+dvar = 0.1;   % Perturbation for RHOT, MOMY, and MOMZ
+%dvar = 0.001; % Perturbation for QV
 dirbase = "Perturbed"; % Base directory of data files
 dirvar  = dirbase+filesep+varname; % Directory for saving settings and perturbed history
 settingsdata = dirvar+filesep+"dvarsettings.mat"; % MAT file for saving settings

@@ -1,14 +1,20 @@
-% Plot 2 Cases of Initial State Perturbation
+% M-file for Plotting Two Cases of Initial State Perturbation
 % 
 % Toshiyuki Ohtsuka, March 2024
 clear;
-figname = "comp2cases_QV_Uub0p5"; % Figure name
-figdir  = "Perturbed\QV"; % Directory to save figure
-load("Perturbed\QV\dvarsettings.mat"); % MAT file of settings
-load("Perturbed\QV\Uub0p5L2\dvarans.mat"); % Data of Case 1
+load("Perturbed/RHOT/dvarsettings.mat"); % MAT file of settings
+figname = "comp2cases_RHOT_Ref0p9"; % Figure name
+optname1 = "Ref0p9L2"; % Name of optimization problem for Case 1
+optname2 = "Ref0p9L1"; % Name of optimization problem for Case 2
+% Change also z1 and leg3 according to the problem setting
+
+figdir  = dirvar; % Directory to save figure
+optdir1 = dirvar+filesep+optname1; % Directory of Case 1
+load(optdir1+filesep+"dvarans.mat"); % Data of Case 1
 dvaransmat1 = dvaransmat; % Initial state perturbation in Case 1
 totalPREC11 = totalPREC1; % Total PREC after perturbation in Case 1
-load("Perturbed\QV\Uub0p5L1\dvarans.mat"); % Data of Case 2
+optdir2 = dirvar+filesep+optname2; % Directory of Case 2
+load(optdir2+filesep+"dvarans.mat"); % Data of Case 2
 dvaransmat2 = dvaransmat; % Initial state perturbation in Case 2
 totalPREC12 = totalPREC1; % Total PREC after perturbation in Case 2
 % totalPREC_org and totalPRECref must be same for all data. 
@@ -16,8 +22,8 @@ totalPREC12 = totalPREC1; % Total PREC after perturbation in Case 2
 %%%% Prepare Labels for Figures %%%%
 x1 = "Grid y";
 y1 = "Grid z";
-%z1 = "\Delta \rho \theta [kg \cdot K/m^3]"; % z label
-z1 = "q_v"; % z label
+z1 = "\Delta \rho \theta [kg \cdot K/m^3]"; % z label
+%z1 = "\Delta q_v"; % z label
 t1 = "(a) Minimum $\ell_2$ Norm Solution"; % title
 
 x2 = x1;
@@ -29,10 +35,10 @@ x3 = "Position y [m]";
 y3 = "Accumulated Precipitation [mm]";
 t3 = "(c) Accumulated Precipitation"; % title
 % legend
-%leg3 = ["Nominal", "$\rho \theta$ Perturbed (Min $\ell_2$ Norm)", "$\rho \theta$ Perturbed (Min $\ell_1$ Norm)", "Reference"];
+leg3 = ["Nominal", "$\rho \theta$ Perturbed (Min $\ell_2$ Norm)", "$\rho \theta$ Perturbed (Min $\ell_1$ Norm)", "Reference"];
 %leg3 = ["Nominal", "$\rho \theta$ Perturbed (Min $\ell_2$ Norm)", "$\rho \theta$ Perturbed (Min $\ell_1$ Norm)", "Upper Bound"];
 %leg3 = ["Nominal", "$q_v$ Perturbed (Min $\ell_2$ Norm)", "$q_v$ Perturbed (Min $\ell_1$ Norm)", "Reference"];
-leg3 = ["Nominal", "$q_v$ Perturbed (Min $\ell_2$ Norm)", "$q_v$ Perturbed (Min $\ell_1$ Norm)", "Upper Bound"];
+%leg3 = ["Nominal", "$q_v$ Perturbed (Min $\ell_2$ Norm)", "$q_v$ Perturbed (Min $\ell_1$ Norm)", "Upper Bound"];
 
 FP = [100,100,1000,700]; % Figure Position
 FS = 10; % Font Size

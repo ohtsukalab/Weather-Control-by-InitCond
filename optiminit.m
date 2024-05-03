@@ -1,47 +1,48 @@
 % M-file for Optimizing Initial Condition Perturbation
 %  and Run SCALE-RM with Perturbed Initial Condition
 %
-% Toshiyuki Ohtsuka, Feb. 2024
+% Toshiyuki Ohtsuka, Nov. 2023, Feb. 2024 - May 2024
 clear;
-load("Perturbed\RHOT\dvarsettings.mat"); % MAT file of settings
+load("Perturbed/RHOT/dvarsettings.mat"); % MAT file of settings
 load(dirvar+filesep+"StensorPREC.mat"); % MAT file of sensitivity
-%optname = "Ref0p5L2NN"; % Name of optimization problem
-optname = "Uub0p5L1NN"; % Name of optimization problem
+optname = "Ref0p9L2"; % Name of optimization problem
+%optname = "Uub0p9L1"; % Name of optimization problem
+% Set totalPRECref, constraints, and solver according to the problem setting
+
 optdir  = dirvar+filesep+optname; % Directory for settings and solutions of optimization problem
 ansdata     = optdir+filesep+"dvarans.mat"; % Settings and Solutions to save
 figdata     = optdir+filesep+"opt_"+varname; % Figure to save
 perhistdata = optdir+filesep+"history_opt.pe"; % Perturbed history files to save
-
-
-% Optimize perturbation of initial condition
-SmatPREC = reshape(StensorPREC,dimPREC,dimyz);
+SmatPREC = reshape(StensorPREC,dimPREC,dimyz); % Sensitivity matrix
+var0vec = reshape(varinit_org,dimyz,1); % nominal initial condition 
 
 %%%% Define reference of total PREC %%%%
-%totalPRECref = 0.5*totalPREC_org;  % Reference PREC 
-totalPRECref = 0.5*max(totalPREC_org)*ones(1,dimy); % Uniform Upper Bound
+totalPRECref = 0.9*totalPREC_org;  % Reference PREC 
+%totalPRECref = 0.9*max(totalPREC_org)*ones(1,dimy); % Uniform Upper Bound
 
 dPREC = totalPRECref - totalPREC_org;  % Desired perturbation in total PREC
 
 %%%% Find opitmal perturbation of initial condition %%%%
 tic
-%dvarans = lsqlin(eye(dimyz),zeros(dimyz,1),[],[],SmatPREC,dPREC'); % L2 norm min for Ref. 
+dvarans = lsqlin(eye(dimyz),zeros(dimyz,1),[],[],SmatPREC,dPREC'); % L2 norm min for Ref. 
 %dvarans = lsqlin(eye(dimyz),zeros(dimyz,1),SmatPREC,dPREC'); % L2 norm min for Ref. Upper Bound 
 %dvarans = minL1lin_rev(eye(dimyz),zeros(dimyz,1),[],[],SmatPREC,dPREC'); % L1 norm min for Ref. 
 %dvarans = minL1lin_rev(eye(dimyz),zeros(dimyz,1),SmatPREC,dPREC'); % L1 norm min for Ref. Upper Bound 
 %%% optimization with a non-negativity constraint for initial condition after perturbation: var0vec+dvarans >= 0 
-var0vec = reshape(varinit_org,dimyz,1); % nominal initial condition 
-Aineq = -eye(dimyz);
+%Aineq = -eye(dimyz);
+%tic
 %dvarans = lsqlin(eye(dimyz),zeros(dimyz,1),Aineq,var0vec,SmatPREC,dPREC'); % L2 norm min for Ref. 
 %dvarans = lsqlin(eye(dimyz),zeros(dimyz,1),[SmatPREC;Aineq],[dPREC';var0vec]); % L2 norm min for Ref. Upper Bound 
 %dvarans = minL1lin_rev(eye(dimyz),zeros(dimyz,1),Aineq,var0vec,SmatPREC,dPREC'); % L1 norm min for Ref. 
-dvarans = minL1lin_rev(eye(dimyz),zeros(dimyz,1),[SmatPREC;Aineq],[dPREC';var0vec]); % L1 norm min for Ref. Upper Bound 
+%dvarans = minL1lin_rev(eye(dimyz),zeros(dimyz,1),[SmatPREC;Aineq],[dPREC';var0vec]); % L1 norm min for Ref. Upper Bound 
+
 comptime_dvarans=toc;
 fprintf("Computation time = %g [sec]\n",comptime_dvarans);
 fprintf("Minimun value of initial condition after perturbation %g \n",min(var0vec+dvarans));
 
 dvaransmat = reshape(dvarans,dimy,dimz);
 system("mkdir "+optdir);
-save(ansdata,"varname","optname","totalPRECref","dvaransmat","comptime_dvarans");
+save(ansdata,"varname","optname","totalPRECref","dvaransmat","comptime_dvarans","perhistdata");
 surf(dvaransmat');
 xlabel("Grid y");
 ylabel("Grid z");
