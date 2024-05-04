@@ -1,9 +1,9 @@
-# Precipitation-Regulation
-Sensitivity analysis and initial condition perturbation for regulating accumulated precipitation
+# Weather-Control-by-InitCond
+Sensitivity analysis and initial condition perturbation for controlling accumulated precipitation
 
 ## Overview 
 
-This repository shares Matlab M files for sensitivity analysis, optimization of initial condition perturbation, and validation for regulating accumulated precipitation in a numerical weather prediction model, SCALE-RM. 
+This repository shares Matlab M files for sensitivity analysis, optimization of initial condition perturbation, and validation for controlling accumulated precipitation in a numerical weather prediction model, SCALE-RM. 
 
 The user runs the following M files in sequence. 
 - initsettings.m : Configures initial settings. In particular, the user needs to specify the directory of the SCALE-RM binary file and the command to run SCALE-RM, which depend on the environment. Settings are saved to dvarsettings.mat. 
@@ -36,7 +36,7 @@ The following M files can be used for checking a history of SCALE-RM.
 
 ## Setup
 ```
-git clone https://github.com/ohtsukalab/Precipitation-Regulation --recursive
+git clone https://github.com/ohtsukalab/Weather-Control-by-InitCond --recursive
 ```
 
 ## License
