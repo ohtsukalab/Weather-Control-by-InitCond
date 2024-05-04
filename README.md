@@ -46,7 +46,7 @@ MIT
 This repository is developed by Toshiyuki Ohtsuka, Graduate School of Informatics, Kyoto University. 
 
 ## Publication
-A research article on background, methodology, and validation is under preparation in collaboration with Atsushi Okazaki (Chiba University), Masaki Ogura (Hiroshima University), and Shunji Kotsuki (Chiba University). 
+A research article on background, methodology, and validation is in preparation in collaboration with Atsushi Okazaki (Chiba University), Masaki Ogura (Hiroshima University), and Shunji Kotsuki (Chiba University). 
 
 ## Acknowledgment
-This repository was developed as a part of JST Moonshot R\&D Program and was supported by JST Moonshot R\&D Program Grant Number JPMJMS2389-1-1.
+This repository was developed as a part of JST Moonshot R\&D Program Grant Number JPMJMS2389-1-1.
