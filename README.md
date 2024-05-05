@@ -9,8 +9,10 @@ The user runs the following M files in sequence.
 - initsettings.m : Configures initial settings. In particular, the user needs to specify the directory of the SCALE-RM binary file and the command to run SCALE-RM, which depend on the environment. Settings are saved to dvarsettings.mat. 
 - perturball.m : Perturbs the initial condition at each grid, runs SCALE-RM, and saves time histories. 
 - computeStensor.m : Reads all of the perturbed histories and computes the sensitivity tensor. The sensitivity tensor is saved to StensorPREC.mat. 
-- optiminit.m : Reads the sensitivity tensor, solves a minimum norm problem to determine the perturbations in the initial conditions to achieve desired perturbations in the accumulated precipitation, runs SCALE-RM with the perturbed initial conditions, and plots the accumulated precipitation. The optimal perturbations are saved to dvarans.mat. The user needs to specify the reference accumulated precipitation, constraints, and the solver.
-- plot2cases.m : Plots optimal perturbations determined by $\ell_2$ and $\ell_1$ norm minimization problems and corresponding accumulated precipitation. 
+- optiminitRef.m : Reads the sensitivity tensor, solves a minimum norm problem to determine the perturbations in the initial conditions to achieve referece perturbations in the accumulated precipitation, runs SCALE-RM with the perturbed initial conditions, and plots the accumulated precipitation. The optimal perturbations are saved to dvarans.mat. The user needs to specify the reference accumulated precipitation, constraints, and the solver.
+- optiminitUub.m : Reads the sensitivity tensor, solves a minimum norm problem to determine the perturbations in the initial conditions to achieve uniform upper bound in the accumulated precipitation, runs SCALE-RM with the perturbed initial conditions, and plots the accumulated precipitation. The optimal perturbations are saved to dvarans.mat. The user needs to specify the reference accumulated precipitation, constraints, and the solver.
+- plot2casesRef.m : Plots optimal perturbations determined by $\ell_2$ and $\ell_1$ norm minimization problems, corresponding accumulated precipitation, and deviation from reference. 
+- plot2casesUub.m : Plots optimal perturbations determined by $\ell_2$ and $\ell_1$ norm minimization problems, corresponding accumulated precipitation, and upper bound violation. 
 
 The following M files define utility functions. 
  - copycdf.m : Copies a set of netCDF data
