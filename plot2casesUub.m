@@ -57,7 +57,7 @@ if varname == "QV"
 end
 
 FP = [100,100,1000,700]; % Figure Position
-FS = 10; % Font Size
+FS = 11; % Font Size
 
 %%%% Plot Perturbations of Initial Condition %%%%
 f = figure;
@@ -92,7 +92,7 @@ ylabel(y3);
 title(t3,'Interpreter','latex');
 hold off;
 
-%%%% Plot Deviations from Reference %%%%
+%%%% Plot Upper Bound Violation %%%%
 %totalPRECerr1 = max(totalPREC11 - totalPRECref,zeros(size(totalPRECref)));
 %totalPRECerr2 = max(totalPREC12 - totalPRECref,zeros(size(totalPRECref)));
 totalPRECerr1 = max(totalPREC11 - totalPRECref,0);

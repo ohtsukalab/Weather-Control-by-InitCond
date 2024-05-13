@@ -57,7 +57,7 @@ if varname == "QV"
 end
 
 FP = [100,100,1000,700]; % Figure Position
-FS = 10; % Font Size
+FS = 11; % Font Size
 
 %%%% Plot Perturbations of Initial Condition %%%%
 f = figure;
@@ -97,8 +97,9 @@ totalPRECerr1 = totalPREC11 - totalPRECref;
 totalPRECerr2 = totalPREC12 - totalPRECref;
 subplot(2,2,4);
 plot(datay,totalPRECerr1,'g-',datay,totalPRECerr2,'b-','LineWidth',2);
-%legend(leg4,'Location','northwest','Interpreter','latex');
-legend(leg4,'Location','southwest','Interpreter','latex');
+legend(leg4,'Location','northwest','Interpreter','latex');
+%legend(leg4,'Location','northeast','Interpreter','latex');
+%legend(leg4,'Location','southwest','Interpreter','latex');
 set(gca,'FontSize',FS);
 xlabel(x4);
 ylabel(y4);
