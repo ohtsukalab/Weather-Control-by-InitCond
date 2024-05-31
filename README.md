@@ -47,8 +47,9 @@ MIT
 ## Contributor
 This repository is developed by Toshiyuki Ohtsuka, Graduate School of Informatics, Kyoto University. 
 
-## Publication
-A research article on background, methodology, and validation is in preparation in collaboration with Atsushi Okazaki (Chiba University), Masaki Ogura (Hiroshima University), and Shunji Kotsuki (Chiba University). 
+## Reference
+Toshiyuki Ohtsuka, Atsushi Okazaki, Masaki Ogura, and Shunji Kotsuki: Convex Optimization of Initial Perturbations toward Quantitative Weather
+  Control, http://arxiv.org/abs/2405.19546 (2024)
 
 ## Acknowledgment
 This repository was developed as a part of JST Moonshot R\&D Program Grant Number JPMJMS2389-1-1.
